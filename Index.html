@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Biodiversidade - O Solo Depois da Colheita</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-seedling"></i> Solo Vivo
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active" onclick="switchPage('home')">Início</a></li>
+                    <li><a href="#sobre" class="nav-link" onclick="switchPage('sobre')">Sobre Mim</a></li>
+                    <li><a href="#agrinho" class="nav-link" onclick="switchPage('agrinho')">O Agrinho</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="page-home" class="page-content active">
+            <div class="hero">
+                <h1>O Solo Depois da Colheita</h1>
+                <p>O ciclo da vida não termina quando a máquina passa. Descubra como a regeneração e o cuidado com a terra garantem o futuro da nossa agricultura.</p>
+            </div>
+
+            <section class="card section-spacing">
+                <h2><i class="fa-solid fa-layer-group text-green"></i> Infográfico: A Magia do Plantio Direto</h2>
+                <p>Veja o que acontece quando escolhemos proteger o solo em vez de queimá-lo. Use os botões abaixo para simular o ciclo:</p>
+                
+                <div class="infographic-container">
+                    <div class="soil-display" id="soil-display">
+                        <div id="soil-layer-sky">☀️</div>
+                        <div id="soil-layer-surface" class="soil-clean">Solo Exposto</div>
+                        <div id="soil-layer-sub">Solo Recoberto</div>
+                    </div>
+                    <div class="infographic-controls">
+                        <button class="btn btn-danger" onclick="simulateSoil('queima')">Simular Queimada</button>
+                        <button class="btn btn-success" onclick="simulateSoil('palhada')">Aplicar Palhada (Plantio Direto)</button>
+                    </div>
+                    <div class="info-box" id="infographic-text">
+                        Clique em um dos botões acima para ver o impacto na estrutura da terra.
+                    </div>
+                </div>
+            </section>
+
+            <section class="card section-spacing">
+                <h2><i class="fa-solid fa-arrows-spin text-green"></i> Radar da Rotação de Culturas</h2>
+                <p>Selecione uma cultura de cobertura para descobrir como ela ajuda a recuperar os nutrientes do solo naturalmente após a colheita principal:</p>
+                
+                <div class="radar-container">
+                    <div class="radar-buttons">
+                        <button class="btn-radar" onclick="showRadar('braquiaria')">Braquiária</button>
+                        <button class="btn-radar" onclick="showRadar('feijao')">Feijão-de-Porco</button>
+                        <button class="btn-radar" onclick="showRadar('crotalaria')">Crotalária</button>
+                    </div>
+                    <div class="radar-display" id="radar-display">
+                        <i class="fa-solid fa-wheat-awn radar-icon"></i>
+                        <h3 id="radar-title">Selecione uma planta</h3>
+                        <p id="radar-desc">Descubra os superpoderes biológicos das plantas de cobertura.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card section-spacing">
+                <h2><i class="fa-solid fa-shuttle-space text-green"></i> Espaço "Amigos do Campo"</h2>
+                <p>A preservação de matas nativas ao redor da lavoura atrai verdadeiros guardiões biológicos. Passe o mouse ou clique nos cards para conhecer seus superpoderes:</p>
+                
+                <div class="grid-friends">
+                    <div class="friend-card">
+                        <div class="friend-icon">🐦</div>
+                        <h3>Pássaros</h3>
+                        <p>Controlam a população de lagartas e insetos nocivos de forma 100% natural.</p>
+                    </div>
+                    <div class="friend-card">
+                        <div class="friend-icon">🐝</div>
+                        <h3>Abelhas</h3>
+                        <p>Responsáveis pela polinização, aumentando a produtividade e a biodiversidade local.</p>
+                    </div>
+                    <div class="friend-card">
+                        <div class="friend-icon">🐞</div>
+                        <h3>Joaninhas</h3>
+                        <p>Devoradoras vorazes de pulgões, atuando como o melhor inseticida biológico do campo.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="page-sobre" class="page-content">
+            <div class="card profile-section">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <div>
+                        <h1>Sobre Mim</h1>
+                        <p class="subtitle">Entusiasta da Tecnologia & Sustentabilidade no Campo</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="profile-body">
+                    <p>Olá! Seja muito bem-vindo ao meu projeto. Sou um desenvolvedor focado em criar soluções digitais que geram impacto positivo no mundo real, unindo tecnologia de ponta com a conscientização ambiental.</p>
+                    <p>Acredito que o futuro da agricultura depende diretamente do equilíbrio ecológico. Através deste portal, busco traduzir conceitos agronômicos complexos em experiências interativas e fáceis de compreender para qualquer pessoa.</p>
+                    <h3>Minhas Competências neste projeto:</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check text-green"></i> Desenvolvimento Web (HTML5, CSS3, JavaScript)</li>
+                        <li><i class="fa-solid fa-check text-green"></i> Design de Interface Focado em Experiência do Usuário (UX)</li>
+                        <li><i class="fa-solid fa-check text-green"></i> Pesquisa Científica sobre Práticas Agrícolas Regenerativas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-agrinho" class="page-content">
+            <div class="card agrinho-section">
+                <div class="agrinho-badge">Projeto Agrinho 2026</div>
+                <h1>O que é o Programa Agrinho?</h1>
+                <p class="lead">Transformando a realidade do campo através da educação e da cidadania.</p>
+                
+                <p>O <strong>Agrinho</strong> é o maior programa de responsabilidade social do país ligado ao setor técnico-agrícola. Desenvolvido há anos, ele atua diretamente nas escolas, incentivando alunos e professores a debaterem temas cruciais como sustentabilidade, saúde, ética e preservação ambiental.</p>
+                
+                <div class="agrinho-grid">
+                    <div class="agrinho-box">
+                        <h4><i class="fa-solid fa-graduation-cap"></i> Educação</h4>
+                        <p>Leva materiais didáticos e reflexões ricas sobre o meio ambiente para dentro das salas de aula.</p>
+                    </div>
+                    <div class="agrinho-box">
+                        <h4><i class="fa-solid fa-earth-americas"></i> Sustentabilidade</h4>
+                        <p>Ensina as novas gerações que produzir alimentos e proteger a natureza andam lado a lado.</p>
+                    </div>
+                </div>
+
+                <blockquote>
+                    "Cultivar a terra com respeito é garantir a colheita das futuras gerações. Esse é o verdadeiro espírito do Agrinho."
+                </blockquote>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Portal O Solo Depois da Colheita. Desenvolvido para a preservação e futuro do nosso chão.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
